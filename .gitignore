@@ -1,2 +1,78 @@
+# Entornos virtuales
 .venv/
+.venv2/
 venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+Cell output*.csv          # VS Code genera esto al exportar salidas de celdas
+
+# Datos: no se versionan. El CSV supera el límite de 100 MB de GitHub y
+# además está bajo licencia CDLA-Sharing-1.0. Se descarga de Kaggle.
+data/raw/
+data/processed/
+data/interim/
+*.csv
+*.pt
+*.pth
+*.parquet
+*.feather
+*.h5
+*.hdf5
+!data/raw/DATASET.md       # este sí: documenta versión y hash del fichero
+
+# Resultados regenerables
+results/figures/
+results/tables/
+results/logs/
+*.png
+*.pdf
+!docs/**/*.pdf             # si guardas la memoria o el anteproyecto
+
+# Modelos entrenados
+checkpoints/
+*.ckpt
+*.onnx
+runs/
+wandb/
+mlruns/
+lightning_logs/
+tensorboard/
+
+# Entorno y secretos
+.env
+.env.local
+*.key
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Caché de herramientas
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
