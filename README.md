@@ -5,7 +5,7 @@ Trabajo de Fin de Grado del Grado en Ingeniería Informática de la Universidad 
 Autor: Gonzalo Manso de Blas Tutor: Alberto Cascajo García
 
 
-## De qué va
+## Idea Principal
 
 La idea es entrenar un detector de blanqueo de capitales sobre un grafo de transacciones bancarias, donde los nodos son cuentas y las aristas son transacciones, y después medir cuánto aguanta ese detector cuando alguien intenta esquivarlo a propósito.
 
@@ -45,7 +45,7 @@ python -m venv .venv
 .venv\Scripts\activate         
 pip install -r requirements.txt
 
-#Un aviso sobre PyTorch: está fijado a la versión 2.6.0 con CUDA 12.4 a propósito. Con la 2.14 me daba OSError: [WinError 1114] al cargar c10.dll en Windows y no hubo manera de arreglarlo de otra forma. Si instalas torchvision por tu cuenta se te va a volver a subir la versión de torch, así que ojo.#
+#Un aviso sobre PyTorch: está fijado a la versión 2.6.0 con CUDA 12.4 a propósito. Con la 2.14 me daba OSError: [WinError 1114] al cargar c10.dll en Windows y no hubo manera de arreglarlo de otra forma. Si instalas torchvision por tu cuenta se te va a volver a subir la versión de torch.#
 
 pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
 
