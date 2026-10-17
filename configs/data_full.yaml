@@ -1,0 +1,8 @@
+csv: data\raw\HI-Small_Trans.csv
+salida: data/processed/amlworld_full.pt
+ventana_prueba:
+  inicio: null
+  fin: null
+truncar_dia: 10
+split:  [0.6, 0.2, 0.2]
+features_arista: [importe]
