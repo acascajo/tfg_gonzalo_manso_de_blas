@@ -39,7 +39,7 @@ results/      figuras y tablas
 tests/
 
 
-### Montarlo
+### Montaje
 
 python -m venv .venv
 .venv\Scripts\activate         
@@ -51,6 +51,11 @@ pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
 
 Las pruebas las he hecho con una RTX 4050 de 6 GB. El grafo completo entra en memoria sin problema, lo que hay que vigilar es el tamaño de los lotes del muestreo de vecindario.
 
+### Creación del grafo
+
+completo → python -m scripts.build_graph --config configs/data_full.yaml
+
+desarrollo → python -m scripts.build_graph --config configs/data_dev.yaml
 
 ### Nota sobre reproducibilidad
 
