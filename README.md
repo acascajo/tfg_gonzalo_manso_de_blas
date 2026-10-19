@@ -19,7 +19,7 @@ AMLworld HI-Small, de IBM Research y ETH Zurich. Se descarga de Kaggle:
 
 https://www.kaggle.com/datasets/ealtman2019/ibm-transactions-for-anti-money-laundering-aml
 
-No está en el repositorio: el CSV pesa cerca de medio giga, por encima del límite de GitHub, y además tiene licencia CDLA-Sharing-1.0. Hay que bajarlo y dejarlo en data/raw/. En data/raw/DATASET.md están la versión exacta que he usado y el hash del fichero, porque el dataset se ha actualizado varias veces desde que se publicó el paper y las cifras de la Tabla 4 del artículo ya no coinciden con lo que te descargas hoy.
+No está en el repositorio: el CSV pesa cerca de medio giga, por encima del límite de GitHub, y además tiene licencia CDLA-Sharing-1.0. Hay que bajarlo y dejarlo en data/raw/.
 
 Son 5.078.345 transacciones con 5.177 marcadas como blanqueo, una de cada 981. Ese desbalanceo condiciona todo: la exactitud no sirve como métrica porque prediciendo siempre "lícito" se acierta el 99,9 %.
 
@@ -27,7 +27,6 @@ Son 5.078.345 transacciones con 5.177 marcadas como blanqueo, una de cada 981. E
 ### Estructura
 
 configs/      parámetros de los experimentos
-data/raw/     el CSV de Kaggle (no versionado)
 data/processed/  el grafo ya construido en formato PyG (no versionado)
 notebooks/    análisis exploratorio
 src/data/     construcción del grafo
