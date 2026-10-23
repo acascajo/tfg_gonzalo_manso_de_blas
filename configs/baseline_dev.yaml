@@ -1,0 +1,22 @@
+grafo: data/processed/amlworld_dev.pt
+salida: results/baseline/dev
+semillas: [0]
+
+experimentos:
+  e1_importe: [log_importe_usd]
+  e2_importe_cuentas: [log_importe_usd,
+                       origen_n_env, origen_vol_env, origen_n_rec, origen_vol_rec,
+                       destino_n_env, destino_vol_env, destino_n_rec, destino_vol_rec]
+
+xgb:
+  n_estimators: 2000          # tope de árboles
+  learning_rate: 0.05         # cuánto se fía de cada árbol nuevo
+  max_depth: 6                # preguntas encadenadas por árbol
+  early_stopping_rounds: 50   # paciencia de la parada temprana
+  eval_metric: aucpr          # qué mira en validación para decidir cuándo parar
+  tree_method: hist           # valores agrupados en tramos: rápido
+  reg_lambda: 1.0             # freno de las hojas (es el valor por defecto, pero así queda escrito)
+  device: cpu                 # dónde entrena
+  n_jobs: 8                   # núcleos que usa; pon los de tu portátil
+  subsample: 0.8
+  colsample_bytree: 0.8

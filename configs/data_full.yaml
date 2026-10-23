@@ -1,6 +1,6 @@
 csv: data\raw\HI-Small_Trans.csv
 salida: data/processed/amlworld_full.pt
-ventana_prueba:
+ventana:
   inicio: null
   fin: null
 truncar_dia: 10
