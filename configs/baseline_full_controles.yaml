@@ -1,0 +1,31 @@
+grafo: data/processed/amlworld_full_controles.pt
+salida: results/baseline/full_controles
+semillas: [0, 1, 2, 3, 4]
+
+experimentos:
+  e2_control: [log_importe_usd,
+               origen_n_env, origen_vol_env, origen_n_rec, origen_vol_rec,
+               destino_n_env, destino_vol_env, destino_n_rec, destino_vol_rec]
+
+  e3_formato: [log_importe_usd,
+               origen_n_env, origen_vol_env, origen_n_rec, origen_vol_rec,
+               destino_n_env, destino_vol_env, destino_n_rec, destino_vol_rec,
+               formato_ACH, formato_Bitcoin, formato_Cash, formato_Cheque,
+               "formato_Credit Card", formato_Reinvestment, formato_Wire]
+
+  e5_hora:    [log_importe_usd,
+               origen_n_env, origen_vol_env, origen_n_rec, origen_vol_rec,
+               destino_n_env, destino_vol_env, destino_n_rec, destino_vol_rec,
+               hora_sin, hora_cos]
+xgb:
+  n_estimators: 2000          # tope de árboles
+  learning_rate: 0.05         # cuánto se fía de cada árbol nuevo
+  max_depth: 6                # preguntas encadenadas por árbol
+  early_stopping_rounds: 50   # paciencia de la parada temprana
+  eval_metric: aucpr          # qué mira en validación para decidir cuándo parar
+  tree_method: hist           # valores agrupados en tramos: rápido
+  reg_lambda: 1.0             # freno de las hojas (es el valor por defecto, pero así queda escrito)
+  device: cpu                 # dónde entrena
+  n_jobs: 8                   # núcleos que usa; pon los de tu portátil
+  subsample: 0.8
+  colsample_bytree: 0.8
