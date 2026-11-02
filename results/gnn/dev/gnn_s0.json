@@ -1,0 +1,122 @@
+{
+  "f1": 0.22014051522248243,
+  "precision": 0.5222222222222223,
+  "recall": 0.1394658753709199,
+  "auc_pr": 0.13579230130503134,
+  "recall_fpr1": 0.3887240356083086,
+  "umbral": 0.8104309439659119,
+  "tn": 288996,
+  "fp": 43,
+  "fn": 290,
+  "tp": 47,
+  "experimento": "gnn",
+  "semilla": 0,
+  "mejor_epoca": 9,
+  "auc_pr_val_mejor": 0.1279524567834642,
+  "historial": [
+    {
+      "epoca": 1,
+      "perdida": 0.04195426622986897,
+      "auc_pr_val": 0.013841352658699044,
+      "t_train": 12.201928399968892,
+      "t_val": 2.491130999987945
+    },
+    {
+      "epoca": 2,
+      "perdida": 0.029545191618941865,
+      "auc_pr_val": 0.022014385458196745,
+      "t_train": 11.081844500033185,
+      "t_val": 2.2956777999643236
+    },
+    {
+      "epoca": 3,
+      "perdida": 0.026749989057992505,
+      "auc_pr_val": 0.02603092229333942,
+      "t_train": 11.184867999982089,
+      "t_val": 2.326819400070235
+    },
+    {
+      "epoca": 4,
+      "perdida": 0.024962228680755955,
+      "auc_pr_val": 0.02961314314844067,
+      "t_train": 11.177491100039333,
+      "t_val": 2.2842883998528123
+    },
+    {
+      "epoca": 5,
+      "perdida": 0.023815531952464587,
+      "auc_pr_val": 0.04612128139410484,
+      "t_train": 11.334583299933001,
+      "t_val": 2.371102900011465
+    },
+    {
+      "epoca": 6,
+      "perdida": 0.022805294590697623,
+      "auc_pr_val": 0.06731488223588623,
+      "t_train": 11.090695400023833,
+      "t_val": 2.2223131000064313
+    },
+    {
+      "epoca": 7,
+      "perdida": 0.021828792207503188,
+      "auc_pr_val": 0.08291929798581817,
+      "t_train": 11.223090399987996,
+      "t_val": 2.323896599933505
+    },
+    {
+      "epoca": 8,
+      "perdida": 0.021170876808848698,
+      "auc_pr_val": 0.08571732662286223,
+      "t_train": 11.245435699820518,
+      "t_val": 2.2905705000739545
+    },
+    {
+      "epoca": 9,
+      "perdida": 0.020462379878873786,
+      "auc_pr_val": 0.1279524567834642,
+      "t_train": 11.171954499790445,
+      "t_val": 2.320297099882737
+    },
+    {
+      "epoca": 10,
+      "perdida": 0.020001266020081534,
+      "auc_pr_val": 0.11369061104776236,
+      "t_train": 11.16037269984372,
+      "t_val": 2.324712200090289
+    }
+  ],
+  "t_entrenar_total": 136.7028491999954,
+  "t_puntuar_test": 2.768739099847153,
+  "vram_max_mb": 494.55419921875,
+  "n_parametros": 40193,
+  "dispositivo": "cuda",
+  "grafo": "C:\\Users\\gon01\\Desktop\\uni\\TFGs\\informatica\\tfg_gonzalo_manso_de_blas\\data\\processed\\amlworld_dev.pt",
+  "config": {
+    "grafo": "data/processed/amlworld_dev.pt",
+    "salida": "results/gnn/dev",
+    "semillas": [
+      0
+    ],
+    "inversas": true,
+    "cargador": {
+      "num_vecinos": [
+        100,
+        100
+      ],
+      "lote_train": 2048,
+      "lote_eval": 4096
+    },
+    "modelo": {
+      "oculto": 64,
+      "capas": 2,
+      "dropout": 0.01,
+      "final_dropout": 0.1
+    },
+    "entrenamiento": {
+      "epocas": 10,
+      "paciencia": 3,
+      "lr": 0.006,
+      "pos_weight": 6.0
+    }
+  }
+}
