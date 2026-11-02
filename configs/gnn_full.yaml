@@ -1,0 +1,22 @@
+# GNN en el grafo completo: el resultado de verdad, con 5 semillas (como XGBoost).
+grafo: data/processed/amlworld_full.pt
+salida: results/gnn/full
+semillas: [0, 1, 2, 3, 4]
+inversas: true
+ 
+cargador:
+  num_vecinos: [100, 100]
+  lote_train: 2048
+  lote_eval: 1024
+ 
+modelo:
+  oculto: 64
+  capas: 2
+  dropout: 0.01
+  final_dropout: 0.1
+ 
+entrenamiento:
+  epocas: 30
+  paciencia: 5
+  lr: 0.006
+  pos_weight: 6.0

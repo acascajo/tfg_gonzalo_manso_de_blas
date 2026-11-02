@@ -1,0 +1,24 @@
+# GNN en la ventana de desarrollo: solo para comprobar que el script funciona.
+# Los resultados de aquí NO valen para concluir (ver paso 5 del roadmap).
+grafo: data/processed/amlworld_dev.pt
+salida: results/gnn/dev
+semillas: [0]
+inversas: true
+ 
+cargador:
+  num_vecinos: [100, 100]   # vecinos por salto (2 saltos)
+  lote_train: 2048          # semillas por lote al entrenar
+  lote_eval: 4096           # al puntuar (no aprende, cabe más)
+ 
+modelo:                     # punto de partida: model_settings.json de Multi-GNN
+  oculto: 64
+  capas: 2
+  dropout: 0.01
+  final_dropout: 0.1
+ 
+entrenamiento:
+  epocas: 10
+  paciencia: 3              # para si la AUC-PR de val no mejora en 3 épocas seguidas
+  lr: 0.006
+  pos_weight: 6.0           # fallar una ilícita cuesta como fallar 6 lícitas
+ 

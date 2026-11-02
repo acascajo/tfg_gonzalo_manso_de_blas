@@ -356,7 +356,7 @@ def build_graph(ruta_csv: Path,
     }
     return data, meta
 
-def vistas(data: Data) -> dict:
+def vistas(data: Data, inversas: bool = False) -> dict:
     """Las tres vistas del protocolo de los tres grafos.
 
     Cada entrada devuelve las aristas sobre las que se propaga el mensaje y las
@@ -365,6 +365,10 @@ def vistas(data: Data) -> dict:
         train → (edge_split == 0, edge_split == 0)
         val   → (edge_split <= 1, edge_split == 1)
         test  → (todas,           edge_split == 2)
+
+    Con inversas=True, el grafo de mensajes lleva además una copia al revés de
+    cada arista y una columna de sentido (ver con_inversas). Las semillas no
+    cambian.
 
     Encaja directamente con LinkNeighborLoader, que acepta por separado el grafo
     del que muestrea y las aristas semilla.
@@ -383,10 +387,13 @@ def vistas(data: Data) -> dict:
 
         grafo = data.edge_subgraph(m_ve)
         del grafo.edge_label, grafo.edge_split
+        if inversas:
+            grafo = con_inversas(grafo)
+        grafo = grafo.contiguous()          # pyg_lib exige las tablas guardadas seguidas
 
         out[nombre] = {
             'data': grafo,
-            'edge_label_index': data.edge_index[:, m_pred],
+            'edge_label_index': data.edge_index[:, m_pred].contiguous(),
             'edge_label': data.edge_label[m_pred],
             'edge_label_id': data.edge_id[m_pred],
         }
@@ -396,3 +403,23 @@ def vistas(data: Data) -> dict:
     assert total == data.edge_label.numel(), "las semillas no cubren todas las aristas"
 
     return out
+
+def con_inversas(grafo: Data) -> Data:
+    """Añade una copia al revés de cada arista, con una columna de sentido.
+
+    Sentido 0: la transacción tal cual (origen → destino).
+    Sentido 1: su copia al revés, para que cada cuenta reciba también
+    mensajes de las cuentas a las que paga.
+    """
+    E = grafo.edge_index.size(1)
+    sentido = torch.cat([torch.zeros(E, 1), torch.ones(E, 1)]).to(grafo.edge_attr.dtype)
+
+    grafo.edge_index = torch.cat([grafo.edge_index, grafo.edge_index.flip(0)], dim=1)
+    grafo.edge_attr = torch.cat([grafo.edge_attr.repeat(2, 1), sentido], dim=1)
+    grafo.edge_id = grafo.edge_id.repeat(2)
+
+    # Ningún otro atributo de arista se ha quedado sin duplicar
+    for clave, valor in grafo:
+        if clave != 'edge_index' and grafo.is_edge_attr(clave):
+            assert valor.size(0) == 2 * E, f"{clave} no se ha duplicado"
+    return grafo

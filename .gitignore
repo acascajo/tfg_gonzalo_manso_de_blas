@@ -76,3 +76,8 @@ Desktop.ini
 .ruff_cache/
 .coverage
 htmlcov/
+
+
+
+# Puntuaciones: grandes y se regeneran
+*.npz
