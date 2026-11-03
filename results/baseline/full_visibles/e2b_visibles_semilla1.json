@@ -1,0 +1,48 @@
+{
+  "f1": 0.08418891170431211,
+  "precision": 0.05232929164007658,
+  "recall": 0.2152230971128609,
+  "auc_pr": 0.027820353860897144,
+  "recall_fpr1": 0.31671041119860016,
+  "umbral": 0.9059130549430847,
+  "tn": 1009820,
+  "fp": 4455,
+  "fn": 897,
+  "tp": 246,
+  "experimento": "e2b_visibles",
+  "semilla": 1,
+  "columnas": [
+    "log_importe_usd",
+    "origen_n_env",
+    "origen_vol_env",
+    "origen_n_rec",
+    "origen_vol_rec",
+    "destino_n_env",
+    "destino_vol_env",
+    "destino_n_rec",
+    "destino_vol_rec"
+  ],
+  "peso": 1325.3056160208969,
+  "best_iteration": 85,
+  "t_entrenar": 64.39816359989345,
+  "t_puntuar_test": 0.7024666999932379,
+  "dias_vistas": {
+    "train": 5.565972222222222,
+    "val": 7.673611111111111,
+    "test": 10.0
+  },
+  "params": {
+    "n_estimators": 2000,
+    "learning_rate": 0.05,
+    "max_depth": 6,
+    "early_stopping_rounds": 50,
+    "eval_metric": "aucpr",
+    "tree_method": "hist",
+    "reg_lambda": 1.0,
+    "device": "cpu",
+    "n_jobs": 8,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8
+  },
+  "grafo": "data/processed/amlworld_full.pt"
+}
