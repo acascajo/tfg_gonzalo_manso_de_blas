@@ -1,0 +1,19 @@
+{
+  "f1": 0.15162454873646208,
+  "precision": 0.1565703634669152,
+  "recall": 0.14698162729658792,
+  "auc_pr": 0.08728599933687632,
+  "recall_fpr1": 0.32458442694663164,
+  "umbral": 0.3871142566204071,
+  "tn": 1013370,
+  "fp": 905,
+  "fn": 975,
+  "tp": 168,
+  "experimento": "gnn_sin_corte",
+  "semilla": 0,
+  "horas": 0,
+  "bloques_val": 1,
+  "bloques_test": 1,
+  "pesos": "results\\gnn\\full\\gnn_s0.pt",
+  "t_total": 225.82440080004744
+}

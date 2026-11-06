@@ -1,0 +1,19 @@
+{
+  "f1": 0.1349056603773585,
+  "precision": 0.14636642784032752,
+  "recall": 0.12510936132983377,
+  "auc_pr": 0.09191648763210107,
+  "recall_fpr1": 0.42782152230971127,
+  "umbral": 0.2533685863018036,
+  "tn": 1013441,
+  "fp": 834,
+  "fn": 1000,
+  "tp": 143,
+  "experimento": "gnn_bloques_1h",
+  "semilla": 4,
+  "horas": 1,
+  "bloques_val": 52,
+  "bloques_test": 56,
+  "pesos": "results\\gnn\\full\\gnn_s4.pt",
+  "t_total": 169.52188299992122
+}

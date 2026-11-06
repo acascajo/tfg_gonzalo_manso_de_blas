@@ -1,0 +1,118 @@
+{
+  "id_tx": 4983790,
+  "origen": 99025,
+  "destino": 348837,
+  "importe_usd": 1168.5300512885622,
+  "umbral": 0.3871143162250519,
+  "puntuacion_inicial": 0.9318866729736328,
+  "acciones": {
+    "conocida": [
+      {
+        "destino": 220235,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.8915880918502808
+      },
+      {
+        "destino": 270674,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.8217555284500122
+      },
+      {
+        "destino": 115770,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.7277931571006775
+      },
+      {
+        "destino": 168004,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.7365970015525818
+      },
+      {
+        "destino": 413989,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.6860259771347046
+      }
+    ],
+    "mula": [
+      {
+        "destino": -1,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.9671512842178345
+      },
+      {
+        "destino": -2,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.9806837439537048
+      },
+      {
+        "destino": -3,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.9875398874282837
+      },
+      {
+        "destino": -4,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.9897339940071106
+      },
+      {
+        "destino": -5,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.9905378818511963
+      }
+    ],
+    "ajena": [
+      {
+        "destino": 414625,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.9502439498901367
+      },
+      {
+        "destino": 505198,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.7403885722160339
+      },
+      {
+        "destino": 195481,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.8531046509742737
+      },
+      {
+        "destino": 353102,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.6911439895629883
+      },
+      {
+        "destino": 489368,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.8574400544166565
+      }
+    ],
+    "desde_mula": [
+      {
+        "destino": -1,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.9112526178359985
+      },
+      {
+        "destino": -2,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.8750094771385193
+      },
+      {
+        "destino": -3,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.8475781679153442
+      },
+      {
+        "destino": -4,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.7034796476364136
+      },
+      {
+        "destino": -5,
+        "importe_usd": 116.85300512885622,
+        "puntuacion": 0.5225766897201538
+      }
+    ]
+  }
+}
